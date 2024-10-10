@@ -1,0 +1,232 @@
+/*################################## GRID-LAYOUT ########################################################## */
+
+.accordion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "area-1 area-1"
+    "answer-area1 answer-area1"
+    "area-2 area-2"
+    "answer-area2 answer-area2"
+    "area-3 area-3"
+    "answer-area3 answer-area3"
+    "area4 area4"
+    "answer-area4 answer-area4"
+    "area5 area5"
+    "answer-question5 answer-question5"
+    "area6 area6"
+    "answer-area6 answer-area6";
+  width: 50%;
+  height: auto;
+}
+
+.area-1 {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: column;
+  grid-template-areas: "question-area1 arrow-area1";
+  grid-area: area-1;
+}
+
+.question-area1 {
+  grid-area: question-area1;
+}
+
+.arrow-area1 {
+  grid-area: arrow-area1;
+}
+
+.answer-area1 {
+  grid-area: answer-area1;
+}
+
+.area-2 {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "question-area2 arrow-area2";
+  grid-area: area-2;
+}
+
+.question-area2 {
+  grid-area: question-area2;
+}
+
+.arrow-area2 {
+  grid-area: arrow-area2;
+}
+
+.answer-area2 {
+  grid-area: answer-area2;
+}
+
+.area-3 {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "question-area3 arrow-area3";
+  grid-area: area-3;
+}
+
+.question-area3 {
+  grid-area: question-area3;
+}
+
+.arrow-area3 {
+  grid-area: arrow-area3;
+}
+
+.answer-area3 {
+  grid-area: answer-area3;
+}
+
+.area4 {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "question-area4 arrow-area4";
+  grid-area: area4;
+}
+
+.question-area4 {
+  grid-area: question-area4;
+}
+
+.arrow-area4 {
+  grid-area: arrow-area4;
+}
+
+.answer-area4 {
+  grid-area: answer-area4;
+}
+
+.area5 {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "question-area5 arrow-area5";
+  grid-area: area5;
+}
+
+.question-area5 {
+  grid-area: question-area5;
+}
+
+.arrow-area5 {
+  grid-area: arrow-area5;
+}
+
+.answer-question5 {
+  grid-area: answer-question5;
+}
+
+.area6 {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "question-area6 arrow-area6";
+  grid-area: area6;
+}
+
+.question-area6 {
+  grid-area: question-area6;
+}
+
+.arrow-area6 {
+  grid-area: arrow-area6;
+}
+
+.answer-area6 {
+  grid-area: answer-area6;
+}
+
+/*######################### STYLE ################################### */
+
+* {
+  text-align: center;
+  font-size: 15px;
+}
+
+main {
+  display: grid;
+  place-items: center;
+}
+
+#q-area {
+  color: white;
+  background-color: black;
+  border-radius: 2rem;
+}
+
+#a-area {
+  border: solid black;
+  border-radius: 2rem;
+}
+
+main #a-area {
+  display: none;
+}
+
+main #a-area.active {
+  display: block;
+  -webkit-animation:scale-in-top .5s cubic-bezier(.25,.46,.45,.94) both;animation:scale-in-top .5s cubic-bezier(.25,.46,.45,.94) both
+}
+
+ @-webkit-keyframes scale-in-top{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}}@keyframes scale-in-top{0%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 0;transform-origin:50% 0;opacity:1}}
+
+.bounceShakeY:hover {
+  animation-name: bounce-shakeY;
+  -webkit-animation-name: bounce-shakeY;
+  -moz-animation-name: bounce-shakeY;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+}
+
+@keyframes bounce-shakeY {
+  0% {
+    transform: translateY(-50%);
+  }
+  12% {
+    transform: translateY(50%);
+  }
+  24% {
+    transform: translateY(-20%);
+  }
+  36% {
+    transform: translateY(20%);
+  }
+  48% {
+    transform: translateY(-10%);
+  }
+  60% {
+    transform: translateY(10%);
+  }
+  72% {
+    transform: translateY(-5%);
+  }
+  84% {
+    transform: translateY(5%);
+  }
+  96% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
